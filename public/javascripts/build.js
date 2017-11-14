@@ -948,7 +948,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__testcomponent__["a" /* default */], null), document.querySelector('#react-app'));
+Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__testcomponent__["a" /* default */], { headline: 'Test Headline', count: 1234, showCount: true }), document.querySelector('#react-app'));
 
 /***/ }),
 /* 15 */
@@ -18217,15 +18217,21 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 
 
-function TestComponent() {
+function TestComponent(props) {
+  const { headline, count, showCount } = props;
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
     'div',
     null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'h1',
       null,
-      'React Test Component'
-    )
+      headline
+    ),
+    showCount ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'p',
+      null,
+      count
+    ) : null
   );
 }
 
